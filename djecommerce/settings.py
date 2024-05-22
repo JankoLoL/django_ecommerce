@@ -12,6 +12,8 @@ ALLOWED_HOSTS = []
 
 SECRET_KEY = config('SECRET_KEY')
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
