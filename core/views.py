@@ -8,11 +8,10 @@ class IndexView(ListView):
     template_name = 'index.html'
 
 
-def products(request):
-    context = {
-        'items': Item.objects.all()
-    }
-    return render(request, "products.html", context)
+class ItemDetailView(DetailView):
+    model = Item
+    template_name = 'product.html'
+
 
 
 def checkout(request):
