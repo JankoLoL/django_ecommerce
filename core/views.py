@@ -1,9 +1,19 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import Item
 
 
-def item_list(request):
+class IndexView(ListView):
+    model = Item
+    template_name = 'index.html'
+
+
+def products(request):
     context = {
         'items': Item.objects.all()
     }
-    return render(request, "home.html", context)
+    return render(request, "products.html", context)
+
+
+def checkout(request):
+    return render(request, "checkout.html")
